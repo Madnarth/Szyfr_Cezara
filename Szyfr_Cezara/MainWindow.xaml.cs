@@ -27,13 +27,13 @@ namespace Szyfr_Cezara
         }
 
         char[] alfabet = new char[32] { 'a', 'ą', 'b', 'c', 'ć', 'd', 'e', 'ę', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'ł', 'm', 'n', 'ń', 'o', 'ó', 'p', 'r', 's', 'ś', 't', 'u', 'w', 'y', 'z', 'ź', 'ż', };
+        int przesuniecie;
+        char znak;
 
         private void szyfruj(object sender, RoutedEventArgs e)
         {
-            int przesuniecie = 0;
-            char znak = '0';
-            if (Int32.Parse(TxtBoxPrzesuniecie.Text) > 31)
-                TxtBoxPrzesuniecie.Text = "31";
+            przesuniecie = 0;
+            znak = '0';
 
             if (Int32.Parse(TxtBoxPrzesuniecie.Text) != 0)
             {
@@ -69,19 +69,26 @@ namespace Szyfr_Cezara
             {
                 TxtBoxPrzesuniecie.Text = TxtBoxPrzesuniecie.Text.Remove(TxtBoxPrzesuniecie.Text.Length - 1);
             }
+            try
+            {
+                if (Int32.Parse(TxtBoxPrzesuniecie.Text) > 31)
+                    TxtBoxPrzesuniecie.Text = "31";
+            }
+            catch (Exception)
+            {
+                               
+            }
         }
 
         private void deszyfruj(object sender, RoutedEventArgs e)
         {
-            int przesuniecie = 0;
-            char znak = '0';
-            if (Int32.Parse(TxtBoxPrzesuniecie.Text) > 31)
-                TxtBoxPrzesuniecie.Text = "31";
+            przesuniecie = 0;
+            znak = '0';
 
             if (Int32.Parse(TxtBoxPrzesuniecie.Text) != 0)
             {
-                    TxtBoxNieszyf_Copy.Text = "";
-                    foreach (char c in TxtBoxSzyf_Copy.Text)
+                    TxtBoxRoszyf.Text = "";
+                    foreach (char c in TxtBoxZaszyf.Text)
                     {
                         znak = c;
 
@@ -94,17 +101,17 @@ namespace Szyfr_Cezara
                             if (przesuniecie == 0)
                             przesuniecie = 0;
 
-                        TxtBoxNieszyf_Copy.Text += alfabet[przesuniecie];
+                            TxtBoxRoszyf.Text += alfabet[przesuniecie];
                         }
                         else
                         {
-                            TxtBoxNieszyf_Copy.Text += znak;
+                            TxtBoxRoszyf.Text += znak;
                         }
                     }         
             }
             else
             {
-                TxtBoxNieszyf_Copy.Text = TxtBoxSzyf_Copy.Text;
+                TxtBoxRoszyf.Text = TxtBoxZaszyf.Text;
             }
         }
     }

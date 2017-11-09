@@ -5,19 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Szyfr_Cezara"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="550" Background="Brown" ResizeMode="NoResize">
+        Title="Szyfr Cezara" Height="450" Width="550" Background="DarkGoldenrod" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBox x:Name="TxtBoxNieszyf" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="150" Width="200" CharacterCasing="Lower"/>
-        <TextBox x:Name="TxtBoxNieszyf_Copy" HorizontalAlignment="Left" Margin="332,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="150" Width="200" CharacterCasing="Lower" IsReadOnly="True"/>
-        <TextBox x:Name="TxtBoxSzyf" HorizontalAlignment="Left" Margin="332,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="150" Width="200" IsReadOnly="True"/>
-        <TextBox x:Name="TxtBoxSzyf_Copy" HorizontalAlignment="Left" Margin="10,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="150" Width="200"/>
-        <TextBox x:Name="TxtBoxPrzesuniecie" HorizontalAlignment="Left" Margin="250,197,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="49" MaxLength="2" TextChanged="TxtBoxPrzesuniecie_TextChanged" Height="26"/>
-        <Label x:Name="label" Content="Tekst nieszyfrowany" HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="Tekst zaszyfrowany" HorizontalAlignment="Left" Margin="374,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="Przesunięcie" HorizontalAlignment="Left" Margin="240,165,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="ButtSzyfruj" Content="Szyfruj" HorizontalAlignment="Left" Margin="238,84,0,0" VerticalAlignment="Top" Click="szyfruj" Height="45" Width="71"/>
-        <Button x:Name="ButtSzyfruj_Copy" Content="Deszyfruj" HorizontalAlignment="Left" Margin="237,294,0,0" VerticalAlignment="Top" Height="45" Width="71" Click="deszyfruj"/>
-        <Label x:Name="label1_Copy" Content="Tekst zaszyfrowany" HorizontalAlignment="Left" Margin="52,211,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Tekst rozszyfrowany" HorizontalAlignment="Left" Margin="374,211,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtBoxNieszyf" HorizontalAlignment="Left" Margin="15,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="150" Width="200" CharacterCasing="Lower"/>
+        <TextBox x:Name="TxtBoxRoszyf" HorizontalAlignment="Left" Margin="320,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="150" Width="200" CharacterCasing="Lower" IsReadOnly="True"/>
+        <TextBox x:Name="TxtBoxSzyf" HorizontalAlignment="Left" Margin="320,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="150" Width="200" IsReadOnly="True"/>
+        <TextBox x:Name="TxtBoxZaszyf" HorizontalAlignment="Left" Margin="15,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="150" Width="200"/>
+        <TextBox x:Name="TxtBoxPrzesuniecie" HorizontalAlignment="Left" Margin="247,219,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="40" MaxLength="2" TextChanged="TxtBoxPrzesuniecie_TextChanged" FontSize="20"/>
+
+        <Button x:Name="ButtSzyfruj" Content="Szyfruj" HorizontalAlignment="Left" Margin="232,94,0,0" VerticalAlignment="Top" Click="szyfruj" Height="44" Width="70" FontWeight="ExtraBold" FontSize="15" Background="GreenYellow"/>
+        <Button x:Name="ButtDeszyf" Content="Deszyfruj" HorizontalAlignment="Left" Margin="227,294,0,0" VerticalAlignment="Top" Height="46" Width="80" Click="deszyfruj" FontWeight="ExtraBold" FontSize="15" Background="RoyalBlue"/>
+
+        <Label x:Name="LabPrzesuniecie" Content="Przesunięcie" HorizontalAlignment="Left" Margin="216,188,0,0" VerticalAlignment="Top" FontWeight="ExtraBold" FontSize="15"/>
+        <Label x:Name="LabNieszyf" Content="Tekst nieszyfrowany" HorizontalAlignment="Left" Margin="39,10,0,0" VerticalAlignment="Top" FontWeight="ExtraBold" FontSize="15"/>
+        <Label x:Name="LabSzyf" Content="Tekst zaszyfrowany" HorizontalAlignment="Left" Margin="352,10,0,0" VerticalAlignment="Top" FontWeight="ExtraBold" FontSize="15"/>
+        <Label x:Name="LabZaszyf" Content="Tekst zaszyfrowany" HorizontalAlignment="Left" Margin="42,211,0,0" VerticalAlignment="Top" FontWeight="ExtraBold" FontSize="15"/>
+        <Label x:Name="LabRozszf" Content="Tekst rozszyfrowany" HorizontalAlignment="Left" Margin="348,211,0,0" VerticalAlignment="Top" FontWeight="ExtraBold" FontSize="15"/>
     </Grid>
 </Window>
