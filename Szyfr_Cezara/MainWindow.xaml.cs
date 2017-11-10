@@ -72,7 +72,10 @@ namespace Szyfr_Cezara
             try
             {
                 if (Int32.Parse(TxtBoxPrzesuniecie.Text) > 31)
-                    TxtBoxPrzesuniecie.Text = "31";
+                {
+                    MessageBox.Show("Za duża wartość przesunięcia.\nWybierz pomiędzy 0-31");
+                    TxtBoxPrzesuniecie.Text = "0";
+                }
             }
             catch (Exception)
             {
