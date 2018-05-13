@@ -97,27 +97,20 @@ namespace Szyfr_Cezara
             }
             try
             {
-<<<<<<< HEAD
-                if (comboBox.SelectedIndex==0)
+                if (comboBox.SelectedIndex == 0)
                 {
                     if (Int32.Parse(TxtBoxPrzesuniecie.Text) > 31)
-                        TxtBoxPrzesuniecie.Text = "31"; 
+                        TxtBoxPrzesuniecie.Text = "31";
                 }
                 else
                 {
                     if (Int32.Parse(TxtBoxPrzesuniecie.Text) > 25)
                         TxtBoxPrzesuniecie.Text = "25";
-=======
-                if (Int32.Parse(TxtBoxPrzesuniecie.Text) > 31)
-                {
-                    MessageBox.Show("Za duża wartość przesunięcia.\nWybierz pomiędzy 0-31");
-                    TxtBoxPrzesuniecie.Text = "0";
->>>>>>> fe8076933ec43fe68ab113e462cfd7c6720c0f4d
                 }
             }
             catch (Exception)
             {
-                               
+
             }
         }
 
