@@ -27,6 +27,7 @@ namespace Szyfr_Cezara
         }
 
         char[] alfabet = new char[32] { 'a', 'ą', 'b', 'c', 'ć', 'd', 'e', 'ę', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'ł', 'm', 'n', 'ń', 'o', 'ó', 'p', 'r', 's', 'ś', 't', 'u', 'w', 'y', 'z', 'ź', 'ż', };
+        char[] alfabetEng = new char[26] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', };
         int przesuniecie;
         char znak;
 
@@ -37,6 +38,8 @@ namespace Szyfr_Cezara
 
             if (Int32.Parse(TxtBoxPrzesuniecie.Text) != 0)
             {
+                if (comboBox.SelectedIndex==0)
+                {
                     TxtBoxSzyf.Text = "";
                     foreach (char c in TxtBoxNieszyf.Text)
                     {
@@ -55,7 +58,30 @@ namespace Szyfr_Cezara
                         {
                             TxtBoxSzyf.Text += znak;
                         }
-                    }                
+                    }  
+                }
+                else
+                {
+                    TxtBoxSzyf.Text = "";
+                    foreach (char c in TxtBoxNieszyf.Text)
+                    {
+                        znak = c;
+
+                        if (Char.IsLetter(znak))
+                        {
+                            przesuniecie = Array.IndexOf(alfabetEng, znak) + int.Parse(TxtBoxPrzesuniecie.Text);
+
+                            if (przesuniecie >= 26)
+                                przesuniecie = przesuniecie - 26;
+
+                            TxtBoxSzyf.Text += alfabetEng[przesuniecie];
+                        }
+                        else
+                        {
+                            TxtBoxSzyf.Text += znak;
+                        }
+                    }
+                }               
             }
             else
             {
@@ -71,8 +97,16 @@ namespace Szyfr_Cezara
             }
             try
             {
-                if (Int32.Parse(TxtBoxPrzesuniecie.Text) > 31)
-                    TxtBoxPrzesuniecie.Text = "31";
+                if (comboBox.SelectedIndex==0)
+                {
+                    if (Int32.Parse(TxtBoxPrzesuniecie.Text) > 31)
+                        TxtBoxPrzesuniecie.Text = "31"; 
+                }
+                else
+                {
+                    if (Int32.Parse(TxtBoxPrzesuniecie.Text) > 25)
+                        TxtBoxPrzesuniecie.Text = "25";
+                }
             }
             catch (Exception)
             {
@@ -87,6 +121,8 @@ namespace Szyfr_Cezara
 
             if (Int32.Parse(TxtBoxPrzesuniecie.Text) != 0)
             {
+                if (comboBox.SelectedIndex==0)
+                {
                     TxtBoxRoszyf.Text = "";
                     foreach (char c in TxtBoxZaszyf.Text)
                     {
@@ -99,7 +135,7 @@ namespace Szyfr_Cezara
                             if (przesuniecie < 0)
                                 przesuniecie = przesuniecie + 32;
                             if (przesuniecie == 0)
-                            przesuniecie = 0;
+                                przesuniecie = 0;
 
                             TxtBoxRoszyf.Text += alfabet[przesuniecie];
                         }
@@ -107,7 +143,32 @@ namespace Szyfr_Cezara
                         {
                             TxtBoxRoszyf.Text += znak;
                         }
-                    }         
+                    }  
+                }
+                else
+                {
+                    TxtBoxRoszyf.Text = "";
+                    foreach (char c in TxtBoxZaszyf.Text)
+                    {
+                        znak = c;
+
+                        if (Char.IsLetter(znak))
+                        {
+                            przesuniecie = Array.IndexOf(alfabetEng, znak) - int.Parse(TxtBoxPrzesuniecie.Text);
+
+                            if (przesuniecie < 0)
+                                przesuniecie = przesuniecie + 26;
+                            if (przesuniecie == 0)
+                                przesuniecie = 0;
+
+                            TxtBoxRoszyf.Text += alfabetEng[przesuniecie];
+                        }
+                        else
+                        {
+                            TxtBoxRoszyf.Text += znak;
+                        }
+                    }
+                }        
             }
             else
             {

@@ -21,5 +21,9 @@
         <Label x:Name="LabSzyf" Content="Tekst zaszyfrowany" HorizontalAlignment="Left" Margin="352,10,0,0" VerticalAlignment="Top" FontWeight="ExtraBold" FontSize="15"/>
         <Label x:Name="LabZaszyf" Content="Tekst zaszyfrowany" HorizontalAlignment="Left" Margin="42,211,0,0" VerticalAlignment="Top" FontWeight="ExtraBold" FontSize="15"/>
         <Label x:Name="LabRozszf" Content="Tekst rozszyfrowany" HorizontalAlignment="Left" Margin="348,211,0,0" VerticalAlignment="Top" FontWeight="ExtraBold" FontSize="15"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="227,253,0,0" VerticalAlignment="Top" Width="80" SelectedIndex="0">
+            <ComboBoxItem>Polski</ComboBoxItem>
+            <ComboBoxItem>Angielski</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>
